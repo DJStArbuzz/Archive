@@ -13,26 +13,45 @@ namespace VehicleDataOnly
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите информацию о машине");
+            Console.WriteLine("Введите информацию о машине.");
+            Console.WriteLine("Неправильная информация будет изменяться автоматически.");
             // Создаем экземпляр
             Vehicle my_car = new Vehicle();
             // Вносим данные для экземляра my_car
+            int num_of_doors, num_of_wheels;
+            string model_name, manufacturer;
+
             Console.Write("Модель - ");
-            string model_name = Console.ReadLine();
+            model_name = Console.ReadLine();
 
             Console.Write("Производитель - ");
-            string manufacturer = Console.ReadLine();
+            manufacturer = Console.ReadLine();
 
             Console.Write("Количество дверей - ");
-            string num_of_doors = Console.ReadLine();
+            try {
+                num_of_doors = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Вы вписали не число");
+                num_of_doors = 4;
+            }
 
             Console.Write("Количество колес - ");
-            string num_of_wheels = Console.ReadLine();
+            try
+            {
+                num_of_wheels = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Вы вписали не число");
+                num_of_wheels = 4;
+            }
 
             my_car.model = model_name;
             my_car.manufacturer = manufacturer;
-            my_car.numOfDoors = Convert.ToInt32(num_of_doors);
-            my_car.numOfWheels = Convert.ToInt32(num_of_wheels);
+            my_car.numOfDoors = num_of_doors;
+            my_car.numOfWheels = num_of_wheels;
             // Вывод информации
             Console.WriteLine("\nВаша машина:");
             Console.WriteLine($"{my_car.manufacturer} {my_car.model}");
