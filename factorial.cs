@@ -19,6 +19,16 @@ namespace FactorialException
             while (--value > 1);
             return factorial;
         }
+        public static int Square(int value)
+        {
+            if (value < 0)
+            {
+                string s = String.Format("Да лень дальше писать");
+                throw new ArgumentException(s);
+            }
+            int square = value;
+            return square * square;
+        }
     }
     public class Program
     {
@@ -37,7 +47,21 @@ namespace FactorialException
                 Console.WriteLine("Фатальная ошибка");
                 Console.WriteLine(e.ToString());
             }
-            Console.WriteLine("Конец");
+            Console.WriteLine("Конец 1-ой функции\n");
+            try
+            {
+                for (int i = 10; i > -10; i--)
+                {
+                    int square = MyMathFunctions.Square(i);
+                    Console.WriteLine($"{i} - {square}");
+                }
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Не ошибка, а лень");
+                Console.WriteLine(e.ToString);
+            }
+            Console.WriteLine("Конец 2-ой функции");
         }
     }
 }
