@@ -18,7 +18,7 @@ namespace CalculateinterestTaЬleWithMethods
             InputInterestData(ref principal, ref interest, ref duration);
 
             // Раздел 2 - проверка введенных данных путем вывода 
-            // их пользователю на э:кран 
+            // их пользователю на экран 
             Console.WriteLine(); // Пропуск строки 
             Console.WriteLine("Вклад " + principal);
             Console.WriteLine("Пpoцeнтнaя ставка " + interest + "%");
