@@ -97,11 +97,9 @@ namespace CalculateInterestTaЬleWithMethods
                 principal = decimal.Round(principal, 2);
 
                 // Вывод результата 
-                Console.WriteLine(year + "-" + principal);
+                Console.WriteLine(year + " - " + principal);
             }
         }
     }         
-
 }
-
         
