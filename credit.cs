@@ -4,7 +4,7 @@ using System;
 // ив ранее рассматривавшихся программах, однако в этой 
 // программе работа распределена между несколькими 
 // методами . 
-namespace CalculateinterestTaЬleWithMethods
+namespace CalculateInterestTaЬleWithMethods
 {
     public class Program
     {
@@ -21,15 +21,15 @@ namespace CalculateinterestTaЬleWithMethods
             // их пользователю на экран 
             Console.WriteLine(); // Пропуск строки 
             Console.WriteLine("Вклад " + principal);
-            Console.WriteLine("Пpoцeнтнaя ставка " + interest + "%");
-            Console.WriteLine("Cpoк " + duration + " лет");
+            Console.WriteLine("Процентная ставка " + interest + "%");
+            Console.WriteLine("Срок " + duration + " лет");
             Console.WriteLine();
 
             // Раздел 3 - вывод таблицы вкладов по годам 
             OutputInterestTaЬle(principal, interest, duration);
 
             // Ожидаем подтверждения пользователя 
-            Console.WriteLine("Haжмитe <Enter> для " + "завершения программы ... ");
+            Console.WriteLine("Нажмите <Enter> для " + "завершения программы ... ");
 
             Console.Read();
         }
@@ -41,10 +41,10 @@ namespace CalculateinterestTaЬleWithMethods
         public static void InputInterestData(ref decimal principal, ref decimal interest, ref decimal duration)
         {
             // la Получение вклада 
-            principal = InputPositiveDecimal("вклaд");
+            principal = InputPositiveDecimal("вклад");
 
             // lб Получение процентной ставки 
-            interest = InputPositiveDecimal("пpoцeнтнaя ставка");
+            interest = InputPositiveDecimal("процентная ставка");
 
             // lв Получение срока 
             duration = InputPositiveDecimal("срок");
@@ -53,7 +53,7 @@ namespace CalculateinterestTaЬleWithMethods
         // Input PositiveDecimal возвращает положительное число 
         // типа decimal, введенное с клавиатуры 
         // Выполняется только одна проверка - на 
-        // неотрицательность введенного значения 
+        // Положительность введенного значения 
         public static decimal InputPositiveDecimal(string prompt)
         {
             // Цикл выполняется, пока не будет введено верное 
