@@ -8,18 +8,25 @@ namespace CSLight
     {
         static void Main(string[] args)
         {
-            int health;
+            float health;
             int armor;
             int damage;
+            int precentConverter = 100;
 
-            Console.Write("Количество здоровья: ");
+
+            Console.Write("Введите количество здоровья: ");
             health = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Количество здоровья: ");
+            Console.Write("Введите количество брони: ");
             armor = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Количество здоровья: ");
+            Console.Write("Введите количество урона: ");
             damage = Convert.ToInt32(Console.ReadLine());
+
+            health -= Convert.ToSingle(damage) / precentConverter * armor;
+
+            Console.WriteLine($"Вам нанесли {damage} урона. " +
+                              $"У вас осталось {health} здоровья.");
         }
     }
 }
