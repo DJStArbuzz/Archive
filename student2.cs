@@ -13,7 +13,7 @@ namespace StudentClassWithMethods
         public static void OutputName(Student student)
         {
             // Выводим имя 
-            Console.WriteLine("Имя студента - { О}", student.name);
+            Console.WriteLine("Имя студента - {0}", student.name);
         }
         // SetName - модификация имени студента 
         public static void SetName(Student student, string name)
