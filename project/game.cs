@@ -9,20 +9,26 @@ namespace Game
 {
     internal class Program
     {
-        public static void PrintResult(ConsoleColor defaultColor)
+        public static void PrintItems()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(35, 0);
-
             Console.Write("Сумка:");
-            Console.ForegroundColor = defaultColor;
         }
+
+        public static void PrintResult()
+        {
+            Console.WriteLine("\nВы собрали все сокровища!");
+            Console.WriteLine("Конец игры.");
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
 
             Console.CursorVisible = false;
 
-            int treasureN = 17;
+            int treasureN = 17, currentN = 0;
             char[] walls = { '#', '|', '/', '\\', '_', '-', '.', '='};
             char[] hashTreasure = {'X', '0', '$', '*'};
             char[] bag = new char[1];
@@ -58,7 +64,8 @@ namespace Game
             ConsoleColor defaultColor = Console.ForegroundColor;
             while (true)
             {
-                PrintResult(defaultColor);
+                PrintItems();
+                Console.ForegroundColor = defaultColor;
 
                 for (int i = 0; i  < bag.Length; i++)
                 {
@@ -128,7 +135,10 @@ namespace Game
                     }
                     tempBag[tempBag.Length - 1] = treasureChar;
                     bag = tempBag;
+                    currentN++;
                 }
+
+                
                 Console.Clear();
             }
         }
