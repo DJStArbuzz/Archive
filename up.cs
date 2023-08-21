@@ -20,7 +20,7 @@ namespace Game
 
             Person person2 = new Student("Джим", 5); ;
             Student student;
-            student = (Student)person;
+            student = (Student)person2;
             student.ShowName();
         }
     }
